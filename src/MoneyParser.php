@@ -14,5 +14,5 @@ interface MoneyParser
      *
      * @throws Exception\ParserException
      */
-    public function parse(string $money, Currency|null $fallbackCurrency = null): Money;
+    public function parse(string $money, ?Currency $fallbackCurrency = null): Money;
 }

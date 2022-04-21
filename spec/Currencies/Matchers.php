@@ -15,7 +15,7 @@ trait Matchers
     public function getMatchers(): array
     {
         return [
-            'haveCurrency' => static function (mixed $subject, mixed $value): bool {
+            'haveCurrency' => static function ($subject, $value): bool {
                 assert(is_array($subject));
 
                 foreach ($subject as $currency) {

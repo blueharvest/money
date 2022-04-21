@@ -31,7 +31,7 @@ final class AggregateMoneyParser implements MoneyParser
         $this->parsers = $parsers;
     }
 
-    public function parse(string $money, Currency|null $fallbackCurrency = null): Money
+    public function parse(string $money, ?Currency $fallbackCurrency = null): Money
     {
         foreach ($this->parsers as $parser) {
             try {

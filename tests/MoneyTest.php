@@ -34,7 +34,7 @@ final class MoneyTest extends TestCase
      * @dataProvider equalityExamples
      * @test
      */
-    public function itEqualsToAnotherMoney(int|string $amount, Currency $currency, bool $equality): void
+    public function itEqualsToAnotherMoney($amount, Currency $currency, bool $equality): void
     {
         $money = new Money(self::AMOUNT, new Currency(self::CURRENCY));
 
@@ -84,7 +84,7 @@ final class MoneyTest extends TestCase
      * @dataProvider roundingExamples
      * @test
      */
-    public function itMultipliesTheAmount(int|string $multiplier, int $roundingMode, string $result): void
+    public function itMultipliesTheAmount($multiplier, int $roundingMode, string $result): void
     {
         $money = new Money(1, new Currency(self::CURRENCY));
 
@@ -116,7 +116,7 @@ final class MoneyTest extends TestCase
      * @dataProvider roundingExamples
      * @test
      */
-    public function it_divides_the_amount(int|string $divisor, int $roundingMode, string $result): void
+    public function it_divides_the_amount($divisor, int $roundingMode, string $result): void
     {
         self::assertEquals(
             $result,
@@ -197,7 +197,7 @@ final class MoneyTest extends TestCase
      * @dataProvider comparatorExamples
      * @test
      */
-    public function itHasComparators(int|string $amount, bool $isZero, bool $isPositive, bool $isNegative): void
+    public function itHasComparators($amount, bool $isZero, bool $isPositive, bool $isNegative): void
     {
         $money = new Money($amount, new Currency(self::CURRENCY));
 

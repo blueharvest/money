@@ -58,7 +58,7 @@ abstract class CalculatorTestCase extends TestCase
      * @dataProvider multiplicationExamples
      * @test
      */
-    public function itMultipliesAValueByAnother(int|string $value1, float $value2, string $expected): void
+    public function itMultipliesAValueByAnother($value1, float $value2, string $expected): void
     {
         self::assertEqualNumber($expected, $this->getCalculator()::multiply((string) $value1, (string) $value2));
     }
@@ -71,7 +71,7 @@ abstract class CalculatorTestCase extends TestCase
      * @dataProvider divisionExamples
      * @test
      */
-    public function itDividesAValueByAnother(int|string $value1, int|float $value2, string $expected): void
+    public function itDividesAValueByAnother($value1, $value2, string $expected): void
     {
         $expectedNumericString = substr($expected, 0, 12);
         $resultNumericString   = substr(
@@ -93,7 +93,7 @@ abstract class CalculatorTestCase extends TestCase
      * @dataProvider divisionExactExamples
      * @test
      */
-    public function itDividesAValueByAnotherExact(int $value1, int|float $value2, string $expected): void
+    public function itDividesAValueByAnotherExact(int $value1, $value2, string $expected): void
     {
         self::assertEqualNumber($expected, $this->getCalculator()::divide((string) $value1, (string) $value2));
     }
@@ -156,7 +156,7 @@ abstract class CalculatorTestCase extends TestCase
      * @dataProvider roundingExamples
      * @test
      */
-    public function itRoundsAValue(int|string $value, int $mode, string $expected): void
+    public function itRoundsAValue($value, int $mode, string $expected): void
     {
         self::assertEquals($expected, $this->getCalculator()::round((string) $value, $mode));
     }
@@ -168,7 +168,7 @@ abstract class CalculatorTestCase extends TestCase
      * @dataProvider compareLessExamples
      * @test
      */
-    public function itComparesValuesLess(int|string $left, int|string $right): void
+    public function itComparesValuesLess($left, $right): void
     {
         // Compare with both orders. One must return a value less than zero,
         // the other must return a value greater than zero.
@@ -183,7 +183,7 @@ abstract class CalculatorTestCase extends TestCase
      * @dataProvider compareEqualExamples
      * @test
      */
-    public function itComparesValues(int|string $left, int|string $right): void
+    public function itComparesValues($left, $right): void
     {
         // Compare with both orders, both must return zero.
         self::assertEquals(0, $this->getCalculator()::compare((string) $left, (string) $right));

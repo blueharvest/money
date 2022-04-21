@@ -73,7 +73,7 @@ final class Money implements JsonSerializable
      *
      * @throws InvalidArgumentException If amount is not integer.
      */
-    public function __construct(int|string $amount, Currency $currency)
+    public function __construct($amount, Currency $currency)
     {
         $this->currency = $currency;
 
@@ -238,7 +238,7 @@ final class Money implements JsonSerializable
      * @psalm-param int|numeric-string $multiplier
      * @psalm-param self::ROUND_*  $roundingMode
      */
-    public function multiply(int|string $multiplier, int $roundingMode = self::ROUND_HALF_UP): Money
+    public function multiply($multiplier, int $roundingMode = self::ROUND_HALF_UP): Money
     {
         if (is_int($multiplier)) {
             $multiplier = (string) $multiplier;
@@ -256,7 +256,7 @@ final class Money implements JsonSerializable
      * @psalm-param int|numeric-string $divisor
      * @psalm-param self::ROUND_*  $roundingMode
      */
-    public function divide(int|string $divisor, int $roundingMode = self::ROUND_HALF_UP): Money
+    public function divide($divisor, int $roundingMode = self::ROUND_HALF_UP): Money
     {
         if (is_int($divisor)) {
             $divisor = (string) $divisor;
@@ -321,7 +321,7 @@ final class Money implements JsonSerializable
         }
 
         $amount    = $this->amount;
-        $fractions = array_map(static function (float|int $ratio) use ($total, $amount) {
+        $fractions = array_map(static function ($ratio) use ($total, $amount) {
             $share = (float) $ratio / $total * (float) $amount;
 
             return $share - floor($share);

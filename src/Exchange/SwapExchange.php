@@ -27,7 +27,7 @@ final class SwapExchange implements Exchange
     {
         try {
             $rate = $this->swap->latest($baseCurrency->getCode() . '/' . $counterCurrency->getCode());
-        } catch (ExchangerException) {
+        } catch (ExchangerException $unused) {
             throw UnresolvableCurrencyPairException::createFromCurrencies($baseCurrency, $counterCurrency);
         }
 

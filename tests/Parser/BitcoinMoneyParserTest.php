@@ -20,7 +20,7 @@ final class BitcoinMoneyParserTest extends TestCase
      * @dataProvider bitcoinExamples
      * @test
      */
-    public function itParsesMoney(string $string, int|string $units): void
+    public function itParsesMoney(string $string, $units): void
     {
         $moneyParser = new BitcoinMoneyParser(2);
 

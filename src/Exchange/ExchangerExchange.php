@@ -36,7 +36,7 @@ final class ExchangerExchange implements Exchange
                 new ExchangerCurrencyPair($baseCurrency->getCode(), $counterCurrency->getCode())
             );
             $rate  = $this->exchanger->getExchangeRate($query);
-        } catch (ExchangerException) {
+        } catch (ExchangerException $unused) {
             throw UnresolvableCurrencyPairException::createFromCurrencies($baseCurrency, $counterCurrency);
         }
 

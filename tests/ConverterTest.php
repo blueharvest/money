@@ -37,8 +37,8 @@ final class ConverterTest extends TestCase
         string $counterCurrencyCode,
         int $subunitBase,
         int $subunitCounter,
-        int|float $ratio,
-        int|string $amount,
+        $ratio,
+        $amount,
         int $expectedAmount
     ): void {
         $baseCurrency    = new Currency($baseCurrencyCode);
@@ -88,8 +88,8 @@ final class ConverterTest extends TestCase
         string $counterCurrencyCode,
         int $subunitBase,
         int $subunitCounter,
-        int|float $ratio,
-        int|string $amount,
+        $ratio,
+        $amount,
         int $expectedAmount
     ): void {
         $baseCurrency    = new Currency($baseCurrencyCode);
@@ -141,8 +141,8 @@ final class ConverterTest extends TestCase
         string $counterCurrencyCode,
         int $subunitBase,
         int $subunitCounter,
-        int|float $ratio,
-        int|string $amount,
+        $ratio,
+        $amount,
         int $expectedAmount
     ): void {
         $baseCurrency    = new Currency($baseCurrencyCode);

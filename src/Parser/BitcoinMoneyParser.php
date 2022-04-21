@@ -30,7 +30,7 @@ final class BitcoinMoneyParser implements MoneyParser
         $this->fractionDigits = $fractionDigits;
     }
 
-    public function parse(string $money, Currency|null $fallbackCurrency = null): Money
+    public function parse(string $money, ?Currency $fallbackCurrency = null): Money
     {
         if (strpos($money, BitcoinCurrencies::SYMBOL) === false) {
             throw new ParserException('Value cannot be parsed as Bitcoin');

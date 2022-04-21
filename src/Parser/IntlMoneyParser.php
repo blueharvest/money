@@ -35,7 +35,7 @@ final class IntlMoneyParser implements MoneyParser
         $this->currencies = $currencies;
     }
 
-    public function parse(string $money, Currency|null $fallbackCurrency = null): Money
+    public function parse(string $money, ?Currency $fallbackCurrency = null): Money
     {
         $currency = '';
         // phpcs:ignore

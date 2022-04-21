@@ -63,7 +63,7 @@ final class Number
     }
 
     /** @psalm-pure */
-    public static function fromNumber(int|string $number): self
+    public static function fromNumber($number): self
     {
         if (is_int($number)) {
             return new self((string) $number);

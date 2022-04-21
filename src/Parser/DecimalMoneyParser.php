@@ -33,7 +33,7 @@ final class DecimalMoneyParser implements MoneyParser
         $this->currencies = $currencies;
     }
 
-    public function parse(string $money, Currency|null $fallbackCurrency = null): Money
+    public function parse(string $money, ?Currency $fallbackCurrency = null): Money
     {
         if ($fallbackCurrency === null) {
             throw new ParserException('DecimalMoneyParser cannot parse currency symbols. Use forceCurrency argument');

@@ -69,7 +69,7 @@ final class NumberTest extends TestCase
      * @dataProvider numericExamples
      * @test
      */
-    public function itCreatesANumberFromANumericValue(int|string $number): void
+    public function itCreatesANumberFromANumericValue($number): void
     {
         $number = Number::fromNumber($number);
 

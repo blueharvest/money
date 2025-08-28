@@ -8,6 +8,8 @@ jobs:
   lowest-version-tests:
     name: Build lowest version
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
 
     steps:
       - name: Set up PHP
@@ -34,6 +36,8 @@ jobs:
   tests:
     name: Build
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
     strategy:
       matrix:
         php:
@@ -67,6 +71,8 @@ jobs:
   psalm:
     name: Psalm
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
 
     steps:
       - name: Checkout code
@@ -87,6 +93,8 @@ jobs:
   docs:
     name: Docs
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
     steps:
       - name: Set up Python
         uses: actions/setup-python@v5
